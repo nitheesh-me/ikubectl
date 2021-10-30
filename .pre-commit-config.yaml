@@ -1,0 +1,30 @@
+default_language_version:
+  python: python3.8
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.0.1
+    hooks:
+      # File formatter
+      - id: check-case-conflict
+      - id: check-merge-conflict
+      - id: trailing-whitespace
+      - id: mixed-line-ending
+      - id: end-of-file-fixer
+      # Check file formats
+      - id: check-json
+      - id: check-toml
+      - id: check-yaml
+      - id: pretty-format-json
+      - id: sort-simple-yaml
+      # Checks for specific files
+      - id: check-executables-have-shebangs
+      - id: check-shebang-scripts-are-executable
+      # Python Specific checks
+      - id: debug-statements
+      - id: check-builtin-literals
+      - id: check-docstring-first
+      - id: check-ast
+  - repo: https://github.com/psf/black
+    rev: 21.9b0
+    hooks:
+    - id: black
